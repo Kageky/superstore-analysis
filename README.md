@@ -13,6 +13,7 @@
 Excel / Power Query — загрузка и очистка данных, объединение таблиц (Merge Queries), сводные таблицы, графики, дашборд со срезами.
 PostgreSQL + DBeaver — та же схема данных в базе, SQL-запросы: JOIN, GROUP BY, агрегатные функции, CASE, подзапрос, оконная функция RANK().
 Структура репозитория
+
 /excel                    — файл с очисткой данных, сводными таблицами и дашбордом
 /sql                       — superstore_analysis.sql: все запросы с комментариями
 README.md
@@ -39,8 +40,9 @@ README.md
 Оба вывода (по прибыли и по возвратам) независимо подтверждены и в Excel, и в SQL.
 
 Пример SQL
-sql
+
 -- Доля возвратов по категориям и подкатегориям
+
 SELECT category, sub_category,
     count(*) AS count_orders,
     count(CASE WHEN returned = 'Yes' THEN 1 END) AS count_returned_orders,
